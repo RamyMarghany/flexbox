@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flexbox Tutorial</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+ <div class="container">
+    <div class="flexOptions form-row">
+    <div class="flexDirection form-group col-md-2 col-sm-6 col-xs-12">
+      <label for="direction">Flex Direction</label>
+      <select id="direction" name="direction" class="form-control" onchange='setDirection()'>
+        <option value="row">row</option>
+        <option value="row-reverse">row reverse</option>
+        <option value="column">column</option>
+        <option value="column-reverse">column reverse</option>
+      </select>
+    </div>
+    
+    <div class="flexJustifyContent form-group col-md-2 col-sm-6 col-xs-12">
+      <label for="justifyContent">Justify Content</label>
+      <select id="justifyContent" name="justifyContent" class="form-control" onchange='setjustifyContent()'>
+        <option value="flex-start">flex-start</option>
+        <option value="center">center</option>
+        <option value="flex-end">flex-end</option>
+        <option value="space-between">space-between</option>
+        <option value="space-around">space-around</option>
+        <option value="space-evenly">space-evenly</option>
+       </select>
+    </div>
+    
+     <div class="flexAlignItems form-group col-md-2 col-sm-6 col-xs-12">
+      <label for="alignItems">Align Items</label>
+      <select id="alignItems" name="alignItems" class="form-control" onchange='setAlignItems()'>
+        <option value="flex-start">flex-start</option>
+        <option value="center">center</option>
+        <option value="flex-end">flex-end</option>
+        <option value="stretch">stretch</option>
+       </select>
+    </div>
+    
+    <div class="flexWrapItems form-group col-md-2 col-sm-6 col-xs-12">
+      <label for="flexWrap">Flex Wrap</label>
+      <select id="flexWrap" name="alignItems" class="form-control" onchange='setWrap()'>
+        <option value="wrap">wrap</option>
+        <option value="no-wrap">no wrap</option>
+       </select>
+    </div>
+    
+    <div class="flexbasisItems form-group col-md-4 col-sm-6 col-xs-12">
+      <label for="flexBasis">Flex Basis</label>
+      <input type="text" id="flexBasis" value='' placeholder="insert the custom width of childs" class="form-control" onchange='setBasis()'>
+    </div>
+  </div>
+  
+  <div id="parent">
+    <div class="child">Child 1</div>
+    <div class="child">Child 2</div>
+    <div class="child">Child 3</div>
+    <div class="child">Child 4</div>
+  </div>
+  </div>
+
+  <script>
+    function setDirection(){
+  let directionValue=document.getElementById('direction').value;        document.getElementById('parent').style.flexDirection=directionValue
+}
+
+function setjustifyContent(){
+  let justifyContentValue=document.getElementById('justifyContent').value;        document.getElementById('parent').style.justifyContent=justifyContentValue
+}
+
+function setAlignItems(){
+  let alignItemsValue=document.getElementById('alignItems').value;        document.getElementById('parent').style.alignItems=alignItemsValue
+}
+
+function setWrap(){
+  let flexWrapValue=document.getElementById('flexWrap').value;          document.getElementById('parent').style.flexWrap=flexWrapValue
+}
+
+function setBasis(){
+  let flexBasisValue = document.getElementById('flexBasis').value;
+  let childLength = document.getElementById('parent').getElementsByClassName('child').length
+  for(i=0;i<childLength;i++){
+    let child=document.getElementsByClassName('child')
+    child[i].style.width='unset';
+    child[i].style.flexBasis=flexBasisValue;
+  }
+}
+
+            
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+.container{
+    padding:50px 0;
+  }
+  
+  #parent{
+    margin-top:40px;
+    height:100vh;
+    border:1px solid #ced4da;
+    border-radius:5px;
+    display:flex;
+  }
+  
+  .child{
+    width:200px;
+    text-align:center;
+    color:#fff;
+  }
+    .child:nth-child(1){
+      background:#E3202D;
+    }
+    .child:nth-child(2){
+      background:#07241F;
+    }
+    .child:nth-child(3){
+      background:#F58931;
+    }
+    .child:nth-child(4){
+      background:#FFEB7A;
+      color:#07241F;
+    }
+  
+  
+  
